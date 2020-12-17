@@ -1,0 +1,45 @@
+<html ng-app="SingersList">
+
+<head>
+    <title>3 Famous Singers</title>
+    <!--Angular-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!--JavaScript-->
+    <script type="text/javascript" src="app.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="SingersController">
+    <h3>3 Famous Singers</h3>
+    <h1>Project by Ren</h1>
+    <hr>
+
+    <!--here are the 3 clickable singers pictures-->
+
+    <table class="top-table">
+        <tr>
+            <td>
+                <img ng-click="select = 'Charlie Puth'" src="Photos/Charlie.png ">Charlie Puth</td>
+            <td><img ng-click="select = 'Selena Gomez'" src="Photos/Selena.png ">Selena Gomez</td>
+            <td><img ng-click="select = 'Shawn Mendes'" src="Photos/Shawn.png ">Shawn Mendes</td>
+        </tr>
+    </table>
+    <!--here are the 3 clickable singers pictures-->
+    <table class="bottom-table ">
+        <tr>
+            <td colspan="3">
+                <h2>Top 5 pieces of Music</h2>
+            </td>
+        </tr>
+        <tr ng-repeat="p in pieces " ng-if="p.singer ==select">
+            <td><img ng-src="{{p.pic}} "></td>
+            <td>{{p.singer}}</td>
+            <td>{{p.title}}</td>
+        </tr>
+    </table>
+</body>
+
+</html>
